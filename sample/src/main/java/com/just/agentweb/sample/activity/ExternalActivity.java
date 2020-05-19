@@ -1,8 +1,9 @@
 package com.just.agentweb.sample.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.util.Log;
+
+import androidx.annotation.Nullable;
 
 /**
  * @author cenxiaozhong

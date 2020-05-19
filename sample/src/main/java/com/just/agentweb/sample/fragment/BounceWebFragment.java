@@ -2,13 +2,14 @@ package com.just.agentweb.sample.fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.just.agentweb.AgentWeb;
 import com.just.agentweb.DefaultWebClient;

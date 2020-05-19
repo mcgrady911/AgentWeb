@@ -2,7 +2,7 @@ package com.just.agentweb.sample.app;
 
 import android.app.Application;
 
-import com.squareup.leakcanary.LeakCanary;
+import leakcanary.LeakCanary;
 
 /**
  * Created by cenxiaozhong on 2017/5/23.
@@ -22,13 +22,12 @@ public class App extends Application {
          * 建议不要在此处提前初始化 WebView 。
          */
 //        WebView mWebView=new WebView(new MutableContextWrapper(this));
-
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
-            return;
-        }
-        LeakCanary.install(this);
+//        if (LeakCanary.isInAnalyzerProcess(this)) {
+//            // This process is dedicated to LeakCanary for heap analysis.
+//            // You should not init your app in this process.
+//            return;
+//        }
+//        LeakCanary.install(this);
         // Normal app init code...
 
     }

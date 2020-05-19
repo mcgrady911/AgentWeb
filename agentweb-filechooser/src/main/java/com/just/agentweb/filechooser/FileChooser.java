@@ -26,12 +26,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+
+import androidx.annotation.NonNull;
 
 import com.just.agentweb.AbsAgentWebUIController;
 import com.just.agentweb.Action;
@@ -246,9 +247,12 @@ public class FileChooser {
         boolean needVideo = false;
         // 在此支持视频拍摄
         // 是否直接打开文件选择器
-        if (this.mIsAboveLollipop && this.mFileChooserParams != null && this.mFileChooserParams.getAcceptTypes() != null) {
+        String[] types = new String[0];
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            types = this.mFileChooserParams.getAcceptTypes();
+        }
+        if (this.mIsAboveLollipop && this.mFileChooserParams != null && types != null && types.length > 0) {
             boolean needCamera = false;
-            String[] types = this.mFileChooserParams.getAcceptTypes();
             for (String typeTmp : types) {
                 if (TextUtils.isEmpty(typeTmp)) {
                     continue;
